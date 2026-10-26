@@ -36,16 +36,21 @@ flowchart LR
 ## Layout
 
 <p align="center">
-  <img src="media/pcb_2d_top.png" width="48%" />
-  <img src="media/pcb_2d_bottom.png" width="48%" />
+  <img src="media/layers_all.png" width="70%" />
 </p>
+<p align="center"><i>All four layers together.</i></p>
+
+| Layer 1 – Top | Layer 2 – Inner |
+|:---:|:---:|
+| <img src="media/layer1_top.png" width="100%" /> | <img src="media/layer2_inner.png" width="100%" /> |
+| **Layer 3 – Inner** | **Layer 4 – Bottom** |
+| <img src="media/layer3_inner.png" width="100%" /> | <img src="media/layer4_bottom.png" width="100%" /> |
 
 ## Files
 
 | Folder | Content |
 |---|---|
 | `altium/` | Project schematic |
-| `docs/` | Schematic PDF |
 | `media/` | Screenshots |
 
 ## What I'd change in the next revision
