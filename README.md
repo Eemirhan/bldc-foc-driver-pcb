@@ -1,6 +1,10 @@
 # Single-Axis BLDC / FOC Driver PCB
 
-![3D render](media/pcb_3d_top.png)
+<p align="center">
+  <img src="media/PCB_top.png" width="48%" />
+  <img src="media/PCB_below.png" width="48%" />
+</p>
+<p align="center"><i>Top and bottom of the board.</i></p>
 
 A single-axis BLDC motor driver board designed in **Altium Designer** for the joint actuators of a future version of the KOUDRUPED quadruped. It is sized to mount on the back of a **T-Motor U8II Pro** actuator.
 
@@ -20,6 +24,7 @@ flowchart LR
     MOT -. "shaft magnet" .-> ENC
 ```
 
+
 | Block | Part | Role |
 |---|---|---|
 | MCU | STM32G4 | Runs field-oriented control (FOC) |
@@ -35,23 +40,23 @@ flowchart LR
 
 ## Layout
 
-<p align="center">
-  <img src="media/layers_all.png" width="70%" />
-</p>
-<p align="center"><i>All four layers together.</i></p>
-
-| Layer 1 – Top | Layer 2 – Inner |
+| Layer 1 – Top (signal) | Layer 2 – GND plane |
 |:---:|:---:|
-| <img src="media/layer1_top.png" width="100%" /> | <img src="media/layer2_inner.png" width="100%" /> |
-| **Layer 3 – Inner** | **Layer 4 – Bottom** |
-| <img src="media/layer3_inner.png" width="100%" /> | <img src="media/layer4_bottom.png" width="100%" /> |
+| <img src="media/signal.png" width="100%" /> | <img src="media/gnd.png" width="100%" /> |
+| **Layer 3 – Power plane** | **Layer 4 – Bottom (encoder side)** |
+| <img src="media/powerr.png" width="100%" /> | <img src="media/bottom-encoder.png" width="100%" /> |
+
+- **Top:** components and signal routing
+- **GND plane:** solid ground reference under the signal layers
+- **Power plane:** shown as a negative, as Altium displays plane layers. Rings are clearances, X marks are vias connected to the plane, and the outer ring is the edge pullback.
+- **Bottom:** the AS5047P encoder faces the motor's shaft magnet from this side
 
 ## Files
 
 | Folder | Content |
 |---|---|
-| `altium/` | Project schematic |
-| `media/` | Screenshots |
+| [`altium/`](altium/) | Altium project, schematic and PCB files |
+| [`media/`](media/) | Renders and layer screenshots |
 
 ## What I'd change in the next revision
 
